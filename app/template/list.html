@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+    <table border = 1>
+         <thead>
+            <td>Id</td>
+            <td>Gender</td>
+            <td>Title</td>
+            <td>First_Name</td>
+            <td>Last_Name</td>
+            <td>Street_Number</td>
+            <td>Street_Name</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Country</td>
+            <td>Postcode</td>
+            <td>Email</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Date_Of_Birth</td>
+            <td>Age</td>
+            <td>Phone</td>
+            <td>Cell</td>
+            <td>URL_Of_Photo</td>
+            <td>Nationality</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+                <td>{{ row[12] }}</td>
+                <td>{{ row[13] }}</td>
+                <td>{{ row[14] }}</td>
+                <td>{{ row[15] }}</td>
+                <td>{{ row[16] }}</td>
+                <td>{{ row[17] }}</td>
+                <td>{{ row[18] }}</td>
+                <td>{{ row[19] }}</td>
+            </tr>
+         {% endfor %}
+      </table>
+</body>
+</html>
