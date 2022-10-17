@@ -1,0 +1,38 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:13.3
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1111"
+      POSTGRES_DB: "db"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+
+  parser:
+    build: ./parser
+    container_name: parser
+    depends_on:
+      - postgres
+    networks:
+      - db
+  app:
+    build: ./app
+    restart: always
+    container_name: flask_docker
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - parser
+    volumes:
+      - ./app:/app
+    networks:
+      - db
+networks:
+  db:
